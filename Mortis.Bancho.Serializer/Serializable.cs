@@ -28,7 +28,17 @@ namespace Mortis.Bancho.Serializer {
             foreach (FieldInfo property in properties) {
                 //For Arrays we require a little bit more code to handle multiple reads
                 if (property.FieldType.IsArray) {
+                    #region Array Serialization
+
                     string baseType = property.FieldType.Name[..^2];
+
+                    if (property.FieldType.GetElementType() != null) {
+                        // ReSharper disable once PossibleNullReferenceException
+                        if (property.FieldType.GetElementType().IsEnum) {
+                            // ReSharper disable once PossibleNullReferenceException
+                            baseType = property.FieldType.GetElementType().GetEnumUnderlyingType().Name;
+                        }
+                    }
 
                     switch (baseType) {
                         case "String": {
@@ -162,7 +172,11 @@ namespace Mortis.Bancho.Serializer {
                             break;
                         }
                     }
+
+                    #endregion
                 }
+
+
             }
         }
     }

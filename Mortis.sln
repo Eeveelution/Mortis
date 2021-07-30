@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortis.Bancho", "Mortis.Bancho\Mortis.Bancho.csproj", "{80E79CB4-3287-4469-9D56-3F05D6E07CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortis.Bancho.Serializer", "Mortis.Bancho.Serializer\Mortis.Bancho.Serializer.csproj", "{0EE3CA40-330B-470C-82CC-97DAE0DB4EA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortis.Bancho.Serializer.Tests", "Mortis.Bancho.Serializer.Tests\Mortis.Bancho.Serializer.Tests.csproj", "{7F7B5286-FCD3-402D-BE3D-7B63E41B2D11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80E79CB4-3287-4469-9D56-3F05D6E07CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E79CB4-3287-4469-9D56-3F05D6E07CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E79CB4-3287-4469-9D56-3F05D6E07CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E79CB4-3287-4469-9D56-3F05D6E07CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE3CA40-330B-470C-82CC-97DAE0DB4EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE3CA40-330B-470C-82CC-97DAE0DB4EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE3CA40-330B-470C-82CC-97DAE0DB4EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE3CA40-330B-470C-82CC-97DAE0DB4EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7B5286-FCD3-402D-BE3D-7B63E41B2D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7B5286-FCD3-402D-BE3D-7B63E41B2D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7B5286-FCD3-402D-BE3D-7B63E41B2D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7B5286-FCD3-402D-BE3D-7B63E41B2D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

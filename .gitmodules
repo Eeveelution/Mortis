@@ -1,0 +1,3 @@
+[submodule "EeveeTools"]
+	path = EeveeTools
+	url = https://github.com/Eeveelution/EeveeTools

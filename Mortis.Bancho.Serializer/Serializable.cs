@@ -172,6 +172,19 @@ namespace Mortis.Bancho.Serializer {
 
                             break;
                         }
+                        default: {
+                            Serializable[] array = (Serializable[]) fieldType.GetValue(this);
+
+                            if(array == null)
+                                throw new NullReferenceException("Initialize Serializable Array fields!!!!!!");
+
+                            for (int i = 0; i != array.Length; i++)
+                                array[i].ReadFromStream(readStream, false);
+
+                            fieldType.SetValue(this, array);
+
+                            break;
+                        }
                     }
 
                     #endregion

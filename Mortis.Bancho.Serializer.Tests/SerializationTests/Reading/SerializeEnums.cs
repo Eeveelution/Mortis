@@ -1,12 +1,13 @@
 using System.IO;
 using EeveeTools.Helpers;
 using Mortis.Bancho.Serializer.Tests.SerializationTests.Serializables;
+using Mortis.Bancho.Serializer.Tests.SerializationTests.TestTypes;
 using NUnit.Framework;
 
-namespace Mortis.Bancho.Serializer.Tests.SerializationTests {
+namespace Mortis.Bancho.Serializer.Tests.SerializationTests.Reading {
     public partial class Tests {
         [Test]
-        public void SerializeEnums() {
+        public void ReadEnums() {
             Stream testStream = new MemoryStream();
             using BanchoWriter writer = new (testStream);
 

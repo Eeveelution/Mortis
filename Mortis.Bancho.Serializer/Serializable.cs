@@ -172,14 +172,31 @@ namespace Mortis.Bancho.Serializer {
 
                             break;
                         }
+                        case "Boolean": {
+                            bool[] array = (bool[]) fieldType.GetValue(this);
+
+                            if (array == null)
+                                throw new NullReferenceException("Initialize Serializable Array fields!!!!!!");
+
+                            for (int i = 0; i != array.Length; i++)
+                                array[i] = reader.ReadBoolean();
+
+                            fieldType.SetValue(this, array);
+
+                            break;
+                        }
                         default: {
                             Serializable[] array = (Serializable[]) fieldType.GetValue(this);
 
                             if(array == null)
                                 throw new NullReferenceException("Initialize Serializable Array fields!!!!!!");
 
-                            for (int i = 0; i != array.Length; i++)
-                                array[i].ReadFromStream(readStream, false);
+                            for (int i = 0; i != array.Length; i++) {
+                                Serializable tempSerializable = (Serializable)Activator.CreateInstance(fieldType.FieldType.GetElementType());
+                                tempSerializable.ReadFromStream(readStream, false);
+
+                                array[i] = tempSerializable;
+                            }
 
                             fieldType.SetValue(this, array);
 
@@ -198,6 +215,9 @@ namespace Mortis.Bancho.Serializer {
                     switch (propType) {
                         case "Byte":
                             fieldType.SetValue(this, reader.ReadByte());
+                            break;
+                        case "Boolean":
+                            fieldType.SetValue(this, reader.ReadBoolean());
                             break;
                         case "Int32":
                             fieldType.SetValue(this, reader.ReadInt32());
@@ -233,7 +253,6 @@ namespace Mortis.Bancho.Serializer {
                             fieldType.SetValue(this, serializable);
                             break;
                     }
-
                 }
             }
         }

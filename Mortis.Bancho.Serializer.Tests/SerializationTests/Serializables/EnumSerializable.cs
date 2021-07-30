@@ -1,5 +1,7 @@
+using Mortis.Bancho.Serializer.Tests.SerializationTests.TestTypes;
+
 namespace Mortis.Bancho.Serializer.Tests.SerializationTests.Serializables {
     public class EnumSerializable : Serializable {
-    [BanchoSerialize] public TestEnum[] TestEnumArray = new TestEnum[4];
+        [BanchoSerialize] public TestEnum[] TestEnumArray = new TestEnum[4];
     }
 }

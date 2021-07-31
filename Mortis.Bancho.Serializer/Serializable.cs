@@ -7,6 +7,7 @@ using EeveeTools.Helpers;
 namespace Mortis.Bancho.Serializer {
     public abstract class Serializable {
         public Serializable() {}
+        public Serializable(Stream readStream) => this.ReadFromStream(readStream);
 
         public virtual void ReadFromStream(Stream readStream, bool resetSeek = true) {
             IOrderedEnumerable<FieldInfo> properties =

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <AssemblyName>Mortis.Bancho.Web</AssemblyName>
+        <RootNamespace>Mortis.Bancho.Web</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EeveeTools\EeveeTools\EeveeTools.csproj" />
+    </ItemGroup>
+
+</Project>

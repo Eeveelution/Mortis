@@ -1,25 +1,23 @@
-using System;
 using System.Net;
 using System.Threading;
-using EeveeTools.Extensions;
 using EeveeTools.Helpers;
 using EeveeTools.Servers.HTTP;
 
-namespace Mortis.Bancho.Bancho {
-    public class BanchoServer {
+namespace Mortis.Bancho.Web.Server {
+    public class ScoreServer {
         private HttpServer _server;
 
-        public BanchoServer(string location) {
+        public ScoreServer(string location) {
             this._server = new HttpServer(location, this.RequestHandler);
         }
 
         private void RequestHandler(string url, HttpListenerContext ctx) {
             LogHelper.Information($"Got Request on {url}");
-
-
+            
+            
         }
 
-        public BanchoServer Start() {
+        public ScoreServer Start() {
             this._server.Start();
 
             return this;

@@ -6,4 +6,8 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\EeveeTools\EeveeTools\EeveeTools.csproj" />
+    </ItemGroup>
+
 </Project>

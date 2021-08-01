@@ -2,6 +2,9 @@ using System;
 using System.Runtime.CompilerServices;
 
 namespace Mortis.Bancho.Serializer {
+    /// <summary>
+    /// Used to find Fields to Serialize and to order said fields
+    /// </summary>
     public sealed class BanchoSerialize : Attribute {
         public int Order;
 

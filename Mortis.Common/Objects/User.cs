@@ -43,5 +43,9 @@ namespace Mortis.Common.Objects {
         public void Drop(DatabaseContext ctx) {
             ctx.MySqlNonQuery("DROP IF EXISTS `users`");
         }
+
+        public static User FromDatabase(DatabaseContext ctx, string username) {
+           // User databaseUser = new
+        }
     }
 }

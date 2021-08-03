@@ -1,4 +1,5 @@
 using System.Net;
+using EeveeTools.Extensions;
 
 namespace Mortis.Bancho.Web.Server.Handlers {
     public class BanchoConnect {
@@ -16,7 +17,11 @@ namespace Mortis.Bancho.Web.Server.Handlers {
             string retrying          = ctx.Request.QueryString.Get("retry");
             string monitorStuff      = ctx.Request.QueryString.Get("x");
 
-            //if()
+            if(clientHash != null)
+                if(clientHash != "b7c3bb2040703d81d9b517b9964d8f87")
+                    ctx.Response.WriteString("error");
+
+            ctx.Response.WriteString("");
         }
     }
 }

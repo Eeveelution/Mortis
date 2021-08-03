@@ -12,8 +12,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EeveeTools", "EeveeTools\Ee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortis.Bancho.Web", "Mortis.Bancho.Web\Mortis.Bancho.Web.csproj", "{69003978-42FE-4BF6-932C-89B552F64202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mortis.Router", "Mortis.Router\Mortis.Router.csproj", "{2A42DCD3-E2DA-4E7E-B112-88580417073A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,10 +38,6 @@ Global
 		{69003978-42FE-4BF6-932C-89B552F64202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69003978-42FE-4BF6-932C-89B552F64202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69003978-42FE-4BF6-932C-89B552F64202}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A42DCD3-E2DA-4E7E-B112-88580417073A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A42DCD3-E2DA-4E7E-B112-88580417073A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A42DCD3-E2DA-4E7E-B112-88580417073A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A42DCD3-E2DA-4E7E-B112-88580417073A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{710D6631-1FAF-4D97-A6EA-4ABDB09EB575} = {D617DC8E-B18E-4B1A-A42D-8C6B9A58D7B4}

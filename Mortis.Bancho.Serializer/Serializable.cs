@@ -486,5 +486,13 @@ namespace Mortis.Bancho.Serializer {
                 }
             }
         }
+
+        public byte[] ToBytes() {
+            MemoryStream stream = new();
+
+            this.WriteToStream(stream);
+
+            return stream.ToArray();
+        }
     }
 }

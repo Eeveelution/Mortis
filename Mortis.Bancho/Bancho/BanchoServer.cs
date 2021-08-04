@@ -1,4 +1,3 @@
-using System;
 using System.Net;
 using System.Threading;
 using EeveeTools.Helpers;
@@ -17,7 +16,7 @@ namespace Mortis.Bancho.Bancho {
             LogHelper.Information($"Got Request on {url}");
 
             if (ctx.Request.Headers.Get("osu-token") == null)
-                new ClientOsu(ctx.Request.InputStream);
+                new ClientOsu(ctx);
         }
 
         public BanchoServer Start() {

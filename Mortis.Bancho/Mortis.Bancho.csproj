@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\EeveeTools\EeveeTools\EeveeTools.csproj" />
+      <ProjectReference Include="..\Mortis.Bancho.Serializer\Mortis.Bancho.Serializer.csproj" />
       <ProjectReference Include="..\Mortis.Common\Mortis.Common.csproj" />
     </ItemGroup>
 

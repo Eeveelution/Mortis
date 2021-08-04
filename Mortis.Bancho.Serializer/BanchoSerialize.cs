@@ -5,6 +5,7 @@ namespace Mortis.Bancho.Serializer {
     /// <summary>
     /// Used to find Fields to Serialize and to order said fields
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field)]
     public sealed class BanchoSerialize : Attribute {
         public int Order;
 

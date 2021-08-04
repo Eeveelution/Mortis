@@ -3,13 +3,13 @@ using Mortis.Bancho.Serializer;
 
 namespace Mortis.Bancho.Bancho.Packets {
     public class Packet {
-        public RequestType  RequestType;
-        public Serializable PacketData;
+        public RequestType RequestType;
+        public byte[]      PacketData;
 
         public Packet() {}
         public Packet(RequestType type, Serializable packetData) {
             this.RequestType = type;
-            this.PacketData = packetData;
+            this.PacketData = packetData.ToBytes();
         }
 
         public static implicit operator Packet(Serializable serializable) {
@@ -22,19 +22,17 @@ namespace Mortis.Bancho.Bancho.Packets {
         }
 
         public SerializablePacket ToSerializable() => new() {
-            RequestType = this.RequestType,
-            Compressed = false,
-            PacketData = this.PacketData
+            RequestType  = this.RequestType,
+            Compressed   = false,
+            PacketLength = this.PacketData.Length,
+            PacketData   = this.PacketData
         };
     }
 
     public class SerializablePacket : Serializable {
-        [BanchoSerialize] public RequestType  RequestType;
-        [BanchoSerialize] public bool         Compressed = false;
-        [BanchoSerialize] public Serializable PacketData;
-    }
-
-    public static partial class PacketExtensions {
-
+        [BanchoSerialize] public RequestType RequestType;
+        [BanchoSerialize] public bool        Compressed = false;
+        [BanchoSerialize] public int         PacketLength;
+        [BanchoSerialize] public byte[]      PacketData;
     }
 }

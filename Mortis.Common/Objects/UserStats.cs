@@ -6,7 +6,7 @@ using MySqlConnector;
 namespace Mortis.Common.Objects {
     public class UserStats : IMigratable {
         public long UserId { get; set; }
-        public byte Mode { get; set; }
+        public sbyte Mode { get; set; }
 
         public ulong RankedScore { get; set; }
         public ulong TotalScore { get; set; }
@@ -15,7 +15,8 @@ namespace Mortis.Common.Objects {
         public double Accuracy { get; set; }
         public uint MaxCombo { get; set; }
 
-        public int Rank { get; set; }
+        public long PerformanceRank { get; set; }
+        public long ScoreRank { get; set; }
 
         public void Create(DatabaseContext ctx) {
             ctx.MySqlNonQuery("DROP IF EXISTS `stats`");
@@ -45,10 +46,11 @@ namespace Mortis.Common.Objects {
         public static UserStats FromDatabase(DatabaseContext ctx, long userId, int mode) {
             UserStats stats = new();
 
-            const string sql = "SELECT * FROM `stats` WHERE UserId=@userid";
+            const string sql = "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY Performance DESC) AS 'PerformanceRank', ROW_NUMBER() OVER (ORDER BY RankedScore DESC) AS 'ScoreRank' FROM `stats` WHERE Mode=@mode) t WHERE UserId=@userid AND Mode=@mode";
 
             MySqlParameter[] sqlParameters = new[] {
-                new MySqlParameter("@userid", userId)
+                new MySqlParameter("@userid", userId),
+                new MySqlParameter("@mode", mode)
             };
 
             stats.MapObject(ctx.MySqlQuery(sql, sqlParameters)[0]);

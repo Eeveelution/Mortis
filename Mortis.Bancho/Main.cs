@@ -2,13 +2,12 @@ using System.IO;
 using Mortis.Bancho;
 using Mortis.Bancho.Bancho;
 using Mortis.Bancho.Bancho.Packets;
+using Mortis.Bancho.Bancho.Packets.User;
 using Mortis.Common.Objects;
 
 MemoryStream testOutputStream = new ();
 
-Packet reply = new BanchoLoginReply() {
-    UserId = 5
-};
+Packet reply = new BanchoLoginReply(5);
 
 reply.ToSerializable().WriteToStream(testOutputStream);
 

@@ -1,6 +1,5 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using Mortis.Bancho.Bancho.Objects;
 
 namespace Mortis.Bancho.Bancho.Managers {
     public class ClientManager {

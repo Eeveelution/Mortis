@@ -2,7 +2,6 @@ using System.Net;
 using System.Threading;
 using EeveeTools.Helpers;
 using EeveeTools.Servers.HTTP;
-using Mortis.Bancho.Bancho.Objects;
 
 namespace Mortis.Bancho.Bancho {
     public class BanchoServer {
